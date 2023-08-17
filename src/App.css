@@ -1,0 +1,16 @@
+/*Just something small to neaten it up.*/
+body {
+  background-color: aquamarine;
+  text-align: center;
+}
+
+.HangmanWord {
+  margin: 10px;
+  word-spacing: 100px;
+}
+
+p {
+  color: black;
+  margin: 10px;
+  letter-spacing: 10px;
+}
