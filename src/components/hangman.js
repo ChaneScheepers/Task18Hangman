@@ -1,21 +1,27 @@
 import React, { Component } from "react";
-import img0 from "./Images/state1.GIF";
-import img1 from "./Images/state2.GIF";
-import img2 from "./Images/state3.GIF";
-import img3 from "./Images/state4.GIF";
-import img4 from "./Images/state5.GIF";
-import img5 from "./Images/state6.GIF";
-import img6 from "./Images/state7.GIF";
+import img0 from "../Images/state1.GIF";
+import img1 from "../Images/state2.GIF";
+import img2 from "../Images/state3.GIF";
+import img3 from "../Images/state4.GIF";
+import img4 from "../Images/state5.GIF";
+import img5 from "../Images/state6.GIF";
+import img6 from "../Images/state7.GIF";
+import img7 from "../Images/state8.GIF";
+import img8 from "../Images/state9.GIF";
+import img9 from "../Images/state10.gif";
+import img10 from "../Images/state11.GIF";
+
 import { randomWord } from "./words";
 
 //I had a lot of help from watching videos online.
 //Class and methods below.
 class Hangman extends Component {
   static defaultProps = {
-    maxWrong: 6,
-    images: [img0, img1, img2, img3, img4, img5, img6],
+    maxWrong: 11, //variable to indicate max incorrect guesses
+    images: [img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10],
   };
 
+  //stateprop
   constructor(props) {
     super(props);
     this.state = { nWrong: 0, guessed: new Set(), answer: randomWord() };
@@ -30,7 +36,8 @@ class Hangman extends Component {
       nWrong: st.nWrong + (st.answer.includes(letter) ? 0 : 1),
     }));
   }
-  //The below creates an array of letters/buttons for entering. Maps through each to assign value and event..
+
+  // The below creates an array of letters/buttons for entering. Maps through each to assign value and event..
   letterForGuess() {
     return "abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
       <button
@@ -43,7 +50,8 @@ class Hangman extends Component {
       </button>
     ));
   }
-  //Takes the word and splits it into letters. 
+
+  //Takes the word and splits it into letters.
   guessedWord() {
     return this.state.answer
       .split("")
@@ -51,9 +59,9 @@ class Hangman extends Component {
   }
 
   //Resets everything and gets a new word from words.js
-  restart() {
+  restart = () => {
     this.setState({ nWrong: 0, guessed: new Set(), answer: randomWord() });
-  }
+  };
 
   //the below compares if the correct letters where entered of the cap of wrong letters where reached. Its then prints out if won or lost.
   render() {
@@ -63,7 +71,6 @@ class Hangman extends Component {
     if (isWinner) gamestate = "You win";
     return (
       <div className="Hangman">
-        <h1>Hangman Developer Addition</h1>
         {wrongGuess !== this.props.maxWrong && (
           <img
             src={this.props.images[this.state.nWrong]}
@@ -77,7 +84,9 @@ class Hangman extends Component {
             ? this.state.answer
             : this.guessedWord()}
         </p>
+
         <p className="HangmanButtons">{gamestate}</p>
+        <button onClick={this.restart}>Restart</button>
       </div>
     );
   }

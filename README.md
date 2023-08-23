@@ -1,17 +1,9 @@
 # Hangman (Exercise 18)
 
-_asdf_
-Hello there **bold** test.
+This is a basic Hangman sim, to play this download the file and enter npm start in the terminal.
 
-## heading 2
+I am still learning how to code, the code is very basic. I had to do a lot of research and watch a few videos. 
 
-### heading 3
+In this game the player has 11 try's to guess the correct word. The words are dev themed. (For fun).
 
-#### heading 4
-
-| asdf | zxcv|
-|------|-----|
-|one|two|
-|three|four|
-
-[link text](www.google.com)
+Once the hangman stick image is fully drawn, the player has lost.

@@ -1,6 +1,6 @@
 /*Just something small to neaten it up.*/
 body {
-  background-color: aquamarine;
+  background-color: gray;
   text-align: center;
 }
 
@@ -13,4 +13,21 @@ p {
   color: black;
   margin: 10px;
   letter-spacing: 10px;
+}
+
+img{
+  margin: 5vw;
+  border: 10px solid black;
+}
+
+button {
+  background-color: black;
+  color: white;
+  margin: 5px;
+  width: 10%;
+  height: 10%;
+}
+
+header{
+  background-color: white;
 }
